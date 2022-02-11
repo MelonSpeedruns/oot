@@ -140,9 +140,9 @@ void EnButte_DrawTransformationEffect(EnButte* this, GlobalContext* globalCtx) {
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_VEC3F_DIV1000(scale, 10, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 700, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 20, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 600, ICHAIN_STOP),
 };
 
 void EnButte_Init(Actor* thisx, GlobalContext* globalCtx) {
@@ -155,7 +155,7 @@ void EnButte_Init(Actor* thisx, GlobalContext* globalCtx) {
     Actor_ProcessInitChain(&this->actor, sInitChain);
 
     if ((this->actor.params & 1) == 1) {
-        this->actor.uncullZoneScale = 32767.0f;
+        this->actor.uncullZoneScale = 200.0f;
     }
 
     SkelAnime_Init(globalCtx, &this->skelAnime, &gButterflySkel, &gButterflyAnim, this->jointTable, this->morphTable,

@@ -172,7 +172,7 @@ void EnDaikuKakariko_Init(Actor* thisx, GlobalContext* globalCtx) {
 
     this->actor.gravity = 0.0f;
     this->runSpeed = 3.0f;
-    this->actor.uncullZoneForward = 32767.0f;
+    this->actor.uncullZoneForward = 1200.0f;
     this->actor.targetMode = 6;
     this->currentAnimIndex = -1;
 

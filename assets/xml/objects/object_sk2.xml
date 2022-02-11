@@ -1,4 +1,4 @@
-<Root>
+﻿<Root>
     <File Name="object_sk2" Segment="6">
         <!-- Stalfos DLists -->
         <DList Name="gStalfosSkullDL" Offset="0x53D0"/>

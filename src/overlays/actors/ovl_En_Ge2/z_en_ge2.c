@@ -124,9 +124,9 @@ void EnGe2_Init(Actor* thisx, GlobalContext* globalCtx) {
     Actor_SetScale(&this->actor, 0.01f);
 
     if (globalCtx->sceneNum == SCENE_SPOT09) {
-        this->actor.uncullZoneForward = 32767.0f;
+        this->actor.uncullZoneForward = 1000.0f;
     } else {
-        this->actor.uncullZoneForward = 32767.0f;
+        this->actor.uncullZoneForward = 1200.0f;
     }
 
     this->yDetectRange = (this->actor.world.rot.z + 1) * 40.0f;

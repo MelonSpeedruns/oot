@@ -36,8 +36,8 @@ const ActorInit Bg_Haka_MeganeBG_InitVars = {
 };
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 1000, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_CONTINUE),
     ICHAIN_VEC3F_DIV1000(scale, 100, ICHAIN_STOP),
 };
 
@@ -90,8 +90,8 @@ void BgHakaMeganeBG_Init(Actor* thisx, GlobalContext* globalCtx) {
             CollisionHeader_GetVirtual(&object_haka_objects_Col_00A7F4, &colHeader);
             this->unk_16A = 80;
             this->actionFunc = func_8087E10C;
-            thisx->uncullZoneScale = 32767.0f;
-            thisx->uncullZoneDownward = 32767.0f;
+            thisx->uncullZoneScale = 3000.0f;
+            thisx->uncullZoneDownward = 3000.0f;
         }
     }
 

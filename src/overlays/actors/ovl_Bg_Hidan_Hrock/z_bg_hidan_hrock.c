@@ -117,7 +117,7 @@ void BgHidanHrock_Init(Actor* thisx, GlobalContext* globalCtx) {
         this->actionFunc = func_808894A4;
         if (thisx->params == 0) {
             thisx->world.pos.y -= 2800.0f;
-            thisx->uncullZoneForward = 32767.0f;
+            thisx->uncullZoneForward = 3000.0f;
         } else if (thisx->params == 1) {
             thisx->world.pos.y -= 800.0f;
         } else if (thisx->params == 2) {
@@ -126,7 +126,7 @@ void BgHidanHrock_Init(Actor* thisx, GlobalContext* globalCtx) {
     } else {
         if (thisx->params == 0) {
             thisx->flags |= ACTOR_FLAG_4 | ACTOR_FLAG_5;
-            thisx->uncullZoneForward = 32767.0f;
+            thisx->uncullZoneForward = 3000.0f;
         }
         this->actionFunc = func_808896B8;
     }

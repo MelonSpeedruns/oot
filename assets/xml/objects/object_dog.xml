@@ -1,4 +1,4 @@
-<Root>
+﻿<Root>
     <File Name="object_dog" Segment="6">
         <Animation Name="gDogBarkAnim" Offset="0x278"/>
         <Animation Name="gDogBowAnim" Offset="0x928"/>

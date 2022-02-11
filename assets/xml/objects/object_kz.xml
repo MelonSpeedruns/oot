@@ -1,4 +1,4 @@
-<Root>
+﻿<Root>
     <File Name="object_kz" Segment="6">
         <Animation Name="gKzMweepAnim" Offset="0x46C"/>
         <Animation Name="gKzIdleAnim" Offset="0x75C"/>

@@ -809,9 +809,9 @@ void Actor_Init(Actor* actor, GlobalContext* globalCtx) {
     actor->minVelocityY = -20.0f;
     actor->xyzDistToPlayerSq = FLT_MAX;
     actor->naviEnemyId = 0xFF;
-    actor->uncullZoneForward = 32767.0f;
-    actor->uncullZoneScale = 32767.0f;
-    actor->uncullZoneDownward = 32767.0f;
+    actor->uncullZoneForward = 1000.0f;
+    actor->uncullZoneScale = 350.0f;
+    actor->uncullZoneDownward = 700.0f;
     CollisionCheck_InitInfo(&actor->colChkInfo);
     actor->floorBgId = BGCHECK_SCENE;
     ActorShape_Init(&actor->shape, 0.0f, NULL, 0.0f);
@@ -2362,7 +2362,19 @@ s32 func_800314B0(GlobalContext* globalCtx, Actor* actor) {
 }
 
 s32 func_800314D4(GlobalContext* globalCtx, Actor* actor, Vec3f* arg2, f32 arg3) {
-    return true;
+    f32 var;
+
+    if ((arg2->z > -actor->uncullZoneScale) && (arg2->z < (actor->uncullZoneForward + actor->uncullZoneScale))) {
+        var = (arg3 < 1.0f) ? 1.0f : 1.0f / arg3;
+
+        if ((((fabsf(arg2->x) - actor->uncullZoneScale) * var) < 1.0f) &&
+            (((arg2->y + actor->uncullZoneDownward) * var) > -1.0f) &&
+            (((arg2->y - actor->uncullZoneScale) * var) < 1.0f)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void func_800315AC(GlobalContext* globalCtx, ActorContext* actorCtx) {

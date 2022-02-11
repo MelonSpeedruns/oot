@@ -96,7 +96,7 @@ static unknownStruct D_80A6E240[] = {
 };
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneScale, 1200, ICHAIN_STOP),
 };
 
 static EnHorseZeldaActionFunc sActionFuncs[] = {
