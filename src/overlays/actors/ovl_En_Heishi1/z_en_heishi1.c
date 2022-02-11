@@ -405,9 +405,9 @@ void EnHeishi1_Update(Actor* thisx, GlobalContext* globalCtx) {
 
         this->actionFunc(this, globalCtx);
 
-        this->actor.uncullZoneForward = 550.0f;
-        this->actor.uncullZoneScale = 350.0f;
-        this->actor.uncullZoneDownward = 700.0f;
+        this->actor.uncullZoneForward = 32767.0f;
+        this->actor.uncullZoneScale = 32767.0f;
+        this->actor.uncullZoneDownward = 32767.0f;
 
         if (this->type != 5) {
             path = this->path * 2;

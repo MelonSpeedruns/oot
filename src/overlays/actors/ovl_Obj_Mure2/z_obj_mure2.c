@@ -160,18 +160,16 @@ void func_80B9A534(ObjMure2* this) {
 }
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneForward, 100, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 2100, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 100, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 void ObjMure2_Init(Actor* thisx, GlobalContext* globalCtx) {
     ObjMure2* this = (ObjMure2*)thisx;
 
     Actor_ProcessInitChain(&this->actor, sInitChain);
-    if (globalCtx->csCtx.state != CS_STATE_IDLE) {
-        this->actor.uncullZoneForward += 1200.0f;
-    }
+
     ObjMure2_SetupWait(this);
 }
 
@@ -188,12 +186,8 @@ void func_80B9A658(ObjMure2* this) {
 }
 
 void func_80B9A668(ObjMure2* this, GlobalContext* globalCtx) {
-    if (Math3D_Dist1DSq(this->actor.projectedPos.x, this->actor.projectedPos.z) <
-        (sDistSquared1[this->actor.params & 3] * this->unk_184)) {
-        this->actor.flags |= ACTOR_FLAG_4;
-        ObjMure2_SpawnActors(this, globalCtx);
-        func_80B9A6E8(this);
-    }
+    this->actor.flags |= ACTOR_FLAG_4;
+    ObjMure2_SpawnActors(this, globalCtx);
 }
 
 void func_80B9A6E8(ObjMure2* this) {

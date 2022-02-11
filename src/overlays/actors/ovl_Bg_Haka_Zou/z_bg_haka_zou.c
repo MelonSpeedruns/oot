@@ -96,9 +96,9 @@ void BgHakaZou_Init(Actor* thisx, GlobalContext* globalCtx) {
         DynaPolyActor_Init(&this->dyna, 0);
 
         if (thisx->params == STA_GIANT_BIRD_STATUE) {
-            thisx->uncullZoneForward = 2000.0f;
-            thisx->uncullZoneScale = 3000.0f;
-            thisx->uncullZoneDownward = 3000.0f;
+            thisx->uncullZoneForward = 32767.0f;
+            thisx->uncullZoneScale = 32767.0f;
+            thisx->uncullZoneDownward = 32767.0f;
         }
     }
 
@@ -176,7 +176,7 @@ void BgHakaZou_Wait(BgHakaZou* this, GlobalContext* globalCtx) {
                 this->collider.dim.yShift = -30;
                 this->collider.dim.pos.x -= 56;
                 this->collider.dim.pos.z += 56;
-                this->dyna.actor.uncullZoneScale = 1500.0f;
+                this->dyna.actor.uncullZoneScale = 32767.0f;
             } else if (this->dyna.actor.params == STA_BOMBABLE_SKULL_WALL) {
                 CollisionHeader_GetVirtual(&object_haka_objects_Col_005E30, &colHeader);
                 this->collider.dim.yShift = -50;

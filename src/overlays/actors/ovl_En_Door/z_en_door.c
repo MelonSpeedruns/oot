@@ -59,7 +59,7 @@ static EnDoorInfo sDoorInfo[] = {
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_U8(targetMode, 0, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneForward, 4000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_STOP),
 };
 
 static AnimationHeader* D_809FCECC[] = { &gDoor3Anim, &gDoor1Anim, &gDoor4Anim, &gDoor2Anim };

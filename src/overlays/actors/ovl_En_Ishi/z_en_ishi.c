@@ -291,16 +291,16 @@ static InitChainEntry sInitChains[][5] = {
     {
         ICHAIN_F32_DIV1000(gravity, -1200, ICHAIN_CONTINUE),
         ICHAIN_F32_DIV1000(minVelocityY, -20000, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneForward, 1200, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneScale, 150, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneDownward, 400, ICHAIN_STOP),
+        ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+        ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+        ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
     },
     {
         ICHAIN_F32_DIV1000(gravity, -2500, ICHAIN_CONTINUE),
         ICHAIN_F32_DIV1000(minVelocityY, -20000, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneForward, 2000, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneScale, 250, ICHAIN_CONTINUE),
-        ICHAIN_F32(uncullZoneDownward, 500, ICHAIN_STOP),
+        ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+        ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+        ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
     },
 };
 
@@ -309,9 +309,7 @@ void EnIshi_Init(Actor* thisx, GlobalContext* globalCtx) {
     s16 type = this->actor.params & 1;
 
     Actor_ProcessInitChain(&this->actor, sInitChains[type]);
-    if (globalCtx->csCtx.state != CS_STATE_IDLE) {
-        this->actor.uncullZoneForward += 1000.0f;
-    }
+
     if (this->actor.shape.rot.y == 0) {
         this->actor.shape.rot.y = this->actor.world.rot.y = Rand_ZeroFloat(0x10000);
     }

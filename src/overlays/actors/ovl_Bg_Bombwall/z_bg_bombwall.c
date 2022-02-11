@@ -104,9 +104,9 @@ void BgBombwall_RotateVec(Vec3f* arg0, Vec3f* arg1, f32 arg2, f32 arg3) {
 }
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneForward, 1800, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 300, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 void BgBombwall_Init(Actor* thisx, GlobalContext* globalCtx) {

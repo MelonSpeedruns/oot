@@ -124,9 +124,9 @@ void func_808908FC(Vec3f* dest, Vec3f* src, s16 angle) {
 }
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneForward, 1200, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 500, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 void BgIceShelter_Init(Actor* thisx, GlobalContext* globalCtx) {

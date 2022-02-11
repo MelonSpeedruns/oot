@@ -65,7 +65,7 @@ static EnfHGPainting sPaintings[] = {
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_S8(naviEnemyId, 0x1A, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 1200, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_STOP),
 };
 
 void EnfHG_Init(Actor* thisx, GlobalContext* globalCtx2) {

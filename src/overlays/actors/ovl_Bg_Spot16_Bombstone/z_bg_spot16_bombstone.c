@@ -122,17 +122,17 @@ const ActorInit Bg_Spot16_Bombstone_InitVars = {
 };
 
 static InitChainEntry sInitChainBoulder[] = {
-    ICHAIN_F32(uncullZoneForward, 2000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 500, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 static InitChainEntry sInitChainDebris[] = {
     ICHAIN_F32(gravity, -1, ICHAIN_CONTINUE),
     ICHAIN_F32(minVelocityY, -10, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneForward, 1000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 200, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 static Vec3f sVelocity = { 0.0f, 0.0f, 0.0f };

@@ -120,9 +120,9 @@ static ColliderCylinderInit sCylinderInit = {
 static CollisionCheckInfoInit sColChkInfoInit = { 0, 9, 23, 1 };
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneForward, 1000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 500, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 void EnHonotrap_FlameCollisionCheck(EnHonotrap* this, GlobalContext* globalCtx) {

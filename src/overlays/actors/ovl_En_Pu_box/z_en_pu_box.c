@@ -48,8 +48,8 @@ void EnPubox_Init(Actor* thisx, GlobalContext* globalCtx) {
     this->unk_164 = 1;
     thisx->colChkInfo.cylRadius = 20;
     thisx->colChkInfo.cylHeight = 50;
-    thisx->uncullZoneDownward = 1200.0f;
-    thisx->uncullZoneScale = 720.0f;
+    thisx->uncullZoneDownward = 32767.0f;
+    thisx->uncullZoneScale = 32767.0f;
     ActorShape_Init(&thisx->shape, 0.0f, ActorShadow_DrawCircle, 6.0f);
     this->dyna.unk_160 = 0;
     this->dyna.unk_15C = DPM_UNK;

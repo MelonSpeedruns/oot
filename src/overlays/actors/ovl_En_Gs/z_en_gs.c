@@ -354,7 +354,7 @@ void func_80A4ED34(EnGs* this, GlobalContext* globalCtx) {
         if (this->unk_200++ >= 40) {
             this->unk_19E |= 0x10;
             this->actor.flags |= ACTOR_FLAG_4;
-            this->actor.uncullZoneForward = 12000.0f;
+            this->actor.uncullZoneForward = 32767.0f;
 
             this->actor.gravity = 0.3f;
             this->unk_19F++;

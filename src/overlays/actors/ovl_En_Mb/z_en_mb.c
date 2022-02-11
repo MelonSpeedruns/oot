@@ -292,9 +292,9 @@ void EnMb_Init(Actor* thisx, GlobalContext* globalCtx) {
             Actor_SetScale(&this->actor, 0.02f);
             this->hitbox.dim.height = 170;
             this->hitbox.dim.radius = 45;
-            this->actor.uncullZoneForward = 4000.0f;
-            this->actor.uncullZoneScale = 800.0f;
-            this->actor.uncullZoneDownward = 1800.0f;
+            this->actor.uncullZoneForward = 32767.0f;
+            this->actor.uncullZoneScale = 32767.0f;
+            this->actor.uncullZoneDownward = 32767.0f;
             this->playerDetectionRange = 710.0f;
             this->attackCollider.info.toucher.dmgFlags = 0x20000000;
 

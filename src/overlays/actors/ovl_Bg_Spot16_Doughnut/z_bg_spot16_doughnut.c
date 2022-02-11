@@ -31,9 +31,9 @@ const ActorInit Bg_Spot16_Doughnut_InitVars = {
 };
 
 static InitChainEntry sInitChain[] = {
-    ICHAIN_F32(uncullZoneForward, 5500, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 5000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 5000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 static s16 sScales[] = {

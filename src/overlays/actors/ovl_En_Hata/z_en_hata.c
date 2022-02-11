@@ -61,9 +61,9 @@ void EnHata_Init(Actor* thisx, GlobalContext* globalCtx) {
     DynaPolyActor_Init(&this->dyna, DPM_UNK);
     CollisionHeader_GetVirtual(&gFlagpoleCol, &colHeader);
     this->dyna.bgId = DynaPoly_SetBgActor(globalCtx, &globalCtx->colCtx.dyna, &this->dyna.actor, colHeader);
-    this->dyna.actor.uncullZoneScale = 500.0f;
-    this->dyna.actor.uncullZoneDownward = 550.0f;
-    this->dyna.actor.uncullZoneForward = 2200.0f;
+    this->dyna.actor.uncullZoneScale = 32767.0f;
+    this->dyna.actor.uncullZoneDownward = 32767.0f;
+    this->dyna.actor.uncullZoneForward = 32767.0f;
     this->invScale = 6;
     this->maxStep = 1000;
     this->minStep = 1;

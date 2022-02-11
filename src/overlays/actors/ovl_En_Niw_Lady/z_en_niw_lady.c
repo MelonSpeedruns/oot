@@ -86,7 +86,7 @@ void EnNiwLady_Init(Actor* thisx, GlobalContext* globalCtx) {
     osSyncPrintf(VT_FGCOL(GREEN) "☆☆☆☆☆ ねぇちゃんうっふん ☆☆☆☆☆ %d\n" VT_RST, this->unk_278);
     osSyncPrintf("\n\n");
     this->actionFunc = func_80AB9F24;
-    thisx->uncullZoneForward = 600.0f;
+    thisx->uncullZoneForward = 32767.0f;
 }
 
 void EnNiwLady_Destroy(Actor* thisx, GlobalContext* globalCtx) {

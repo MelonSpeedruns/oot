@@ -32,7 +32,7 @@ const ActorInit Elf_Msg_InitVars = {
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_VEC3F_DIV1000(scale, 1000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneForward, 1000, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_STOP),
 };
 
 void ElfMsg_SetupAction(ElfMsg* this, ElfMsgActionFunc actionFunc) {

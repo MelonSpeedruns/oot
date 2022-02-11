@@ -102,7 +102,7 @@ void EnGe1_Init(Actor* thisx, GlobalContext* globalCtx) {
     Actor_SetScale(&this->actor, 0.01f);
 
     // In Gerudo Valley
-    this->actor.uncullZoneForward = ((globalCtx->sceneNum == SCENE_SPOT09) ? 1000.0f : 1200.0f);
+    this->actor.uncullZoneForward = ((globalCtx->sceneNum == SCENE_SPOT09) ? 32767.0f : 32767.0f);
 
     switch (this->actor.params & 0xFF) {
 

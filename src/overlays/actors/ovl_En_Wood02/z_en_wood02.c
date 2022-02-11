@@ -103,16 +103,7 @@ s32 EnWood02_SpawnZoneCheck(EnWood02* this, GlobalContext* globalCtx, Vec3f* pos
     SkinMatrix_Vec3fMtxFMultXYZW(&globalCtx->viewProjectionMtxF, pos, &this->actor.projectedPos,
                                  &this->actor.projectedW);
 
-    phi_f12 = ((this->actor.projectedW == 0.0f) ? 1000.0f : fabsf(1.0f / this->actor.projectedW));
-
-    if ((-this->actor.uncullZoneScale < this->actor.projectedPos.z) &&
-        (this->actor.projectedPos.z < (this->actor.uncullZoneForward + this->actor.uncullZoneScale)) &&
-        (((fabsf(this->actor.projectedPos.x) - this->actor.uncullZoneScale) * phi_f12) < 1.0f) &&
-        (((this->actor.projectedPos.y + this->actor.uncullZoneDownward) * phi_f12) > -1.0f) &&
-        (((this->actor.projectedPos.y - this->actor.uncullZoneScale) * phi_f12) < 1.0f)) {
-        return true;
-    }
-    return false;
+    return true;
 }
 
 /** Spawns similar-looking trees or bushes only when the player is sufficiently close. Presumably done this way to keep
@@ -199,9 +190,9 @@ void EnWood02_Init(Actor* thisx, GlobalContext* globalCtx2) {
         case WOOD_BUSH_GREEN_LARGE:
         case WOOD_BUSH_BLACK_LARGE:
             actorScale = 1.5f;
-            this->actor.uncullZoneForward = 4000.0f;
-            this->actor.uncullZoneScale = 2000.0f;
-            this->actor.uncullZoneDownward = 2400.0f;
+            this->actor.uncullZoneForward = 32767.0f;
+            this->actor.uncullZoneScale = 32767.0f;
+            this->actor.uncullZoneDownward = 32767.0f;
             break;
         case WOOD_TREE_CONICAL_SPAWNER:
         case WOOD_TREE_OVAL_YELLOW_SPAWNER:
@@ -220,15 +211,15 @@ void EnWood02_Init(Actor* thisx, GlobalContext* globalCtx2) {
         case WOOD_TREE_KAKARIKO_ADULT:
         case WOOD_BUSH_GREEN_SMALL:
         case WOOD_BUSH_BLACK_SMALL:
-            this->actor.uncullZoneForward = 4000.0f;
-            this->actor.uncullZoneScale = 800.0f;
-            this->actor.uncullZoneDownward = 1800.0f;
+            this->actor.uncullZoneForward = 32767.0f;
+            this->actor.uncullZoneScale = 32767.0f;
+            this->actor.uncullZoneDownward = 32767.0f;
             break;
         case WOOD_TREE_CONICAL_SMALL:
             actorScale = 0.6f;
-            this->actor.uncullZoneForward = 4000.0f;
-            this->actor.uncullZoneScale = 400.0f;
-            this->actor.uncullZoneDownward = 1000.0f;
+            this->actor.uncullZoneForward = 32767.0f;
+            this->actor.uncullZoneScale = 32767.0f;
+            this->actor.uncullZoneDownward = 32767.0f;
             break;
         case WOOD_LEAF_GREEN:
         case WOOD_LEAF_YELLOW:

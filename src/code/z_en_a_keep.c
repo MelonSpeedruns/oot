@@ -122,8 +122,8 @@ void EnAObj_Init(Actor* thisx, GlobalContext* globalCtx) {
     this->dyna.bgId = BGACTOR_NEG_ONE;
     this->dyna.unk_160 = 0;
     this->dyna.unk_15C = DPM_UNK;
-    thisx->uncullZoneDownward = 1200.0f;
-    thisx->uncullZoneScale = 200.0f;
+    thisx->uncullZoneDownward = 32767.0f;
+    thisx->uncullZoneScale = 32767.0f;
 
     switch (thisx->params) {
         case A_OBJ_BLOCK_LARGE:
@@ -297,8 +297,8 @@ void EnAObj_BoulderFragment(EnAObj* this, GlobalContext* globalCtx) {
 }
 
 void EnAObj_SetupBlock(EnAObj* this, s16 type) {
-    this->dyna.actor.uncullZoneDownward = 1200.0f;
-    this->dyna.actor.uncullZoneScale = 720.0f;
+    this->dyna.actor.uncullZoneDownward = 32767.0f;
+    this->dyna.actor.uncullZoneScale = 32767.0f;
     EnAObj_SetupAction(this, EnAObj_Block);
 }
 

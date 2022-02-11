@@ -123,9 +123,9 @@ static s8 D_80998224[] = {
 
 static InitChainEntry sInitChain[] = {
     ICHAIN_VEC3F(scale, 1, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneForward, 4000, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneScale, 100, ICHAIN_CONTINUE),
-    ICHAIN_F32(uncullZoneDownward, 400, ICHAIN_STOP),
+    ICHAIN_F32(uncullZoneForward, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneScale, 32767, ICHAIN_CONTINUE),
+    ICHAIN_F32(uncullZoneDownward, 32767, ICHAIN_STOP),
 };
 
 typedef struct {
@@ -266,7 +266,7 @@ void DoorShutter_Init(Actor* thisx, GlobalContext* globalCtx2) {
     } else if (phi_a3 == 4) {
         Actor_SetScale(&this->dyna.actor, 0.1f);
         this->unk_166 = 100;
-        this->dyna.actor.uncullZoneScale = 200.0f;
+        this->dyna.actor.uncullZoneScale = 32767.0f;
         Actor_SetFocus(&this->dyna.actor, 0.0f);
     } else {
         Actor_SetFocus(&this->dyna.actor, 60.0f);
