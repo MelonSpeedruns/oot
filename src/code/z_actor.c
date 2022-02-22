@@ -2063,6 +2063,13 @@ void Actor_UpdateAll(GlobalContext* globalCtx, ActorContext* actorCtx) {
 
             actor->sfx = 0;
 
+            if (CVar_GetS32("gDisableDrawDistance", 0) != 0)
+            {
+                actor->uncullZoneForward = 32767.0f;
+                actor->uncullZoneScale = 32767.0f;
+                actor->uncullZoneDownward = 32767.0f;
+            }
+    
             if (actor->init != NULL) {
                 if (Object_IsLoaded(&globalCtx->objectCtx, actor->objBankIndex)) {
                     Actor_SetObjectDependency(globalCtx, actor);
@@ -2362,6 +2369,7 @@ s32 func_800314B0(GlobalContext* globalCtx, Actor* actor) {
 }
 
 s32 func_800314D4(GlobalContext* globalCtx, Actor* actor, Vec3f* arg2, f32 arg3) {
+    /*
     f32 var;
 
     if ((arg2->z > -actor->uncullZoneScale) && (arg2->z < (actor->uncullZoneForward + actor->uncullZoneScale))) {
@@ -2375,6 +2383,8 @@ s32 func_800314D4(GlobalContext* globalCtx, Actor* actor, Vec3f* arg2, f32 arg3)
     }
 
     return false;
+    */
+    return true;
 }
 
 void func_800315AC(GlobalContext* globalCtx, ActorContext* actorCtx) {

@@ -187,9 +187,10 @@ void func_80B9A658(ObjMure2* this) {
     this->actionFunc = func_80B9A668;
 }
 
-void func_80B9A668(ObjMure2* this, GlobalContext* globalCtx) {
-    if (Math3D_Dist1DSq(this->actor.projectedPos.x, this->actor.projectedPos.z) <
-        (sDistSquared1[this->actor.params & 3] * this->unk_184)) {
+void func_80B9A668(ObjMure2* this, GlobalContext* globalCtx)
+{
+    if (Math3D_Dist1DSq(this->actor.projectedPos.x, this->actor.projectedPos.z) < (sDistSquared1[this->actor.params & 3] * this->unk_184) || CVar_GetS32("gDisableDrawDistance", 0) != 0)
+    {
         this->actor.flags |= ACTOR_FLAG_4;
         ObjMure2_SpawnActors(this, globalCtx);
         func_80B9A6E8(this);
@@ -200,13 +201,17 @@ void func_80B9A6E8(ObjMure2* this) {
     this->actionFunc = func_80B9A6F8;
 }
 
-void func_80B9A6F8(ObjMure2* this, GlobalContext* globalCtx) {
+void func_80B9A6F8(ObjMure2* this, GlobalContext* globalCtx)
+{
     func_80B9A534(this);
-    if ((sDistSquared2[this->actor.params & 3] * this->unk_184) <=
-        Math3D_Dist1DSq(this->actor.projectedPos.x, this->actor.projectedPos.z)) {
-        this->actor.flags &= ~ACTOR_FLAG_4;
-        ObjMure2_CleanupAndDie(this, globalCtx);
-        func_80B9A658(this);
+
+    if (CVar_GetS32("gDisableDrawDistance", 1) != 0)
+    {
+        if ((sDistSquared2[this->actor.params & 3] * this->unk_184) <= Math3D_Dist1DSq(this->actor.projectedPos.x, this->actor.projectedPos.z)) {
+            this->actor.flags &= ~ACTOR_FLAG_4;
+            ObjMure2_CleanupAndDie(this, globalCtx);
+            func_80B9A658(this);
+        }
     }
 }
 

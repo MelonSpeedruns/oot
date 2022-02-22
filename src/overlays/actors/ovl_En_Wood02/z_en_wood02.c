@@ -98,6 +98,7 @@ static f32 sSpawnCos;
 static f32 sSpawnSin;
 
 s32 EnWood02_SpawnZoneCheck(EnWood02* this, GlobalContext* globalCtx, Vec3f* pos) {
+    /*
     f32 phi_f12;
 
     SkinMatrix_Vec3fMtxFMultXYZW(&globalCtx->viewProjectionMtxF, pos, &this->actor.projectedPos,
@@ -113,6 +114,9 @@ s32 EnWood02_SpawnZoneCheck(EnWood02* this, GlobalContext* globalCtx, Vec3f* pos
         return true;
     }
     return false;
+        */
+       
+    return true;
 }
 
 /** Spawns similar-looking trees or bushes only when the player is sufficiently close. Presumably done this way to keep
